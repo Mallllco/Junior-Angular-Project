@@ -1,0 +1,17 @@
+.containerList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.container > div {
+  background-color: whitesmoke;
+  height: 61px;
+  width: 215px;
+}

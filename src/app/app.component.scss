@@ -1,0 +1,52 @@
+.title {
+  align-self: center;
+  text-align: center;
+  font-size: 2em;
+  grid-area: header;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+.sidenav {
+  height: 100vh;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow: hidden;
+  grid-area: sidenav;
+  position: sticky;
+}
+
+.sidenav a {
+  text-align: center;
+  padding-top: 10px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 15%;
+  font-size: 28px;
+  padding: 0px 10px;
+}
+
+.col2 {
+  display: grid;
+  grid-template-areas:
+    "sidenav header header header header header"
+    "sidenav content content content content content";
+  grid-template-rows: 1fr 7fr;
+}
+
+.content {
+  grid-area: content;
+  margin-left: 1%;
+}

@@ -1,0 +1,11 @@
+<div>
+  <span><h2>Benvenuto!</h2></span>
+  <div>
+    <p>Corsi Recenti</p>
+  </div>
+  <app-card-list [message]="displayMessage" [lists]="courseList$ | async">
+    <ng-template let-item>
+      <app-card card [list]="item"></app-card>
+    </ng-template>
+  </app-card-list>
+</div>

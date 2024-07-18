@@ -1,0 +1,49 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "corso di inglese",
+      "description": "imparare l'inglese",
+      "difficulty": "Facile",
+      "duration": 200000000,
+      "price": 12,
+      "viewed": false
+    },
+    {
+      "id": 2,
+      "title": "corso di francese",
+      "description": "imparare il francese",
+      "difficulty": "Difficile",
+      "duration": 200000,
+      "price": 13,
+      "viewed": false
+    },
+    {
+      "id": 3,
+      "title": "corso di Aramaico",
+      "description": "imparare l'Aramaico",
+      "difficulty": "Facile",
+      "duration": 200000,
+      "price": 15,
+      "viewed": false
+    },
+    {
+      "id": 4,
+      "title": "corso di Spagnolo",
+      "description": "imparare il spagnolo",
+      "difficulty": "Facile",
+      "duration": 200000,
+      "price": 12,
+      "viewed": true
+    },
+    {
+      "id": 5,
+      "title": "corso di tedesco",
+      "description": "imparare il tedesco",
+      "difficulty": "Facile",
+      "duration": 200000,
+      "price": 12,
+      "viewed": true
+    }
+  ]
+}

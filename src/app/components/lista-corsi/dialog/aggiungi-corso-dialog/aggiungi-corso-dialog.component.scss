@@ -1,0 +1,32 @@
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.right-align-number {
+  text-align: right;
+}
+
+input.right-align-number::-webkit-outer-spin-button,
+input.right-align-number::-webkit-inner-spin-button {
+  display: none;
+}
+
+mat-form-field {
+  padding: 10px;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+.lessonTitle {
+  padding: 10px;
+}
+
+.row-style {
+  display: flex;
+  flex-direction: row;
+}

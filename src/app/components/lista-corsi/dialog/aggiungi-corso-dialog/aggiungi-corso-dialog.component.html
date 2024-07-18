@@ -1,0 +1,107 @@
+<div>
+  <h2 mat-dialog-title>Aggiungi un Corso</h2>
+  <mat-dialog-content>
+    <form
+      [formGroup]="addCourseForm"
+      (ngSubmit)="onSubmit(addCourseForm)"
+      novalidate
+      class="container"
+    >
+      <div class="column">
+        <mat-form-field>
+          <mat-label>Titolo del Corso</mat-label>
+          <input matInput formControlName="title" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Descrizione</mat-label>
+          <textarea matInput formControlName="description"></textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Difficoltà</mat-label>
+          <mat-select
+            formControlName="difficulty"
+            (change)="changeDifficulty($event)"
+          >
+            <mat-option value="bassa">Bassa</mat-option>
+            <mat-option value="media">Media</mat-option>
+            <mat-option value="alta">Alta</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!-- <mat-form-field>
+          <mat-label>Durata</mat-label>
+          <input
+            matInput
+            formControlName="duration"
+            pattern="[0-9]{2}:[0-5]{1}[0-9]{1}:[0-5]{1}[0-9]{1}"
+          />
+          <mat-hint align="end">Il formato deve essere in hh:mm:ss</mat-hint>
+        </mat-form-field> -->
+        <mat-form-field floatLabel="always">
+          <mat-label>prezzo</mat-label>
+          <input
+            matInput
+            formControlName="price"
+            placeholder="0"
+            type="number"
+            class="right-align-number"
+          />
+          <span matTextPrefix>€&nbsp;</span>
+          <span matTextSuffix>.00</span>
+        </mat-form-field>
+        <mat-dialog-actions>
+          <button mat-button mat-dialog-close>Cancel</button>
+          <button
+            mat-button
+            type="submit"
+            [mat-dialog-close]=""
+            [disabled]="!addCourseForm.valid"
+          >
+            Conferma
+          </button>
+        </mat-dialog-actions>
+      </div>
+
+      <div class="column">
+        <h3>Lezioni</h3>
+        <button mat-button type="button" (click)="addNewLesson()">
+          Aggiungi una Lezione
+        </button>
+
+        <div formArrayName="lessons">
+          <ng-container *ngFor="let lesson of Lessons.controls; let i = index">
+            <div [formGroupName]="i">
+              <div class="row-style">
+                <h4 class="lessonTitle">Lezione {{ i + 1 }}</h4>
+                <ng-container *ngIf="i != 0">
+                  <button mat-button type="button" (click)="deleteLesson(i)">
+                    <mat-icon>delete_forever</mat-icon>
+                  </button>
+                </ng-container>
+              </div>
+              <mat-form-field>
+                <mat-label>Titolo della Lezione</mat-label>
+                <input matInput formControlName="title" />
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Descrizione della Lezione</mat-label>
+                <input matInput formControlName="description" />
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Durata della Lezione</mat-label>
+                <input
+                  matInput
+                  formControlName="duration"
+                  pattern="[0-9]{2}:[0-5]{1}[0-9]{1}:[0-5]{1}[0-9]{1}"
+                  placeholder="00:00:00"
+                />
+                <mat-hint align="end"
+                  >Il formato deve essere in hh:mm:ss</mat-hint
+                >
+              </mat-form-field>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </form>
+  </mat-dialog-content>
+</div>

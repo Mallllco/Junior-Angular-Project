@@ -1,0 +1,32 @@
+<ng-container
+  *ngTemplateOutlet="!lists ? noList : lists.length > 0 ? listFull : listEmpty"
+>
+</ng-container>
+
+<ng-template #listFull>
+  <div class="containerList">
+    <div *ngFor="let list of lists">
+      <ng-template
+        [ngTemplateOutlet]="cardRef"
+        [ngTemplateOutletContext]="{ $implicit: list }"
+      >
+      </ng-template>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #listEmpty>
+  <span>
+    <h2>{{ message }}</h2>
+  </span>
+</ng-template>
+
+<ng-template #noList>
+  <div class="container">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</ng-template>

@@ -1,0 +1,20 @@
+<app-card-list [message]="displayMessageLessons" [lists]="lessonList$ | async">
+  <ng-template let-item>
+    <app-card card [list]="item">
+      <ng-container ngProjectAs="[footer]">
+        {{ item.duration | msToTime }}
+      </ng-container>
+    </app-card>
+  </ng-template>
+</app-card-list>
+
+<div>
+  <div>
+    <p>Corsi Recenti</p>
+  </div>
+  <app-card-list [message]="displayMessage" [lists]="courseList$ | async">
+    <ng-template let-item>
+      <app-card card [list]="item"></app-card>
+    </ng-template>
+  </app-card-list>
+</div>
